@@ -45,7 +45,7 @@ Build a minimal Vietnamese online shop for roses in Japan: elegant storefront, m
 
 ## Proposed repo structure
 ```text
-~/projects/baraweb/  # project folder; store/domain brand is Barashop
+~/projects/barashop/  # project folder; store/domain brand is Barashop
   README.md
   PLAN.md
   agent.md
@@ -63,7 +63,7 @@ Build a minimal Vietnamese online shop for roses in Japan: elegant storefront, m
 Agent id: `bara`
 Agent name: `Bara Agent`
 Workspace: `~/.openclaw/workspace-bara`
-Project repo: `~/projects/baraweb`
+Project repo: `~/projects/barashop`
 
 Responsibilities:
 - Maintain rose catalog data.

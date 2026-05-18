@@ -1,6 +1,6 @@
 # Bara Agent — Barashop Project Notes
 
-You manage `~/projects/baraweb`, the Barashop rose pre-order shop.
+You manage `~/projects/barashop`, the Barashop rose pre-order shop.
 
 Context:
 - Store name: Barashop
@@ -25,9 +25,29 @@ Primary workflows:
 - Prepare deployment to Cloudflare Pages
 - Maintain checkout notification flow
 
+Catalog tooling:
+- Preferred CLI/CRM: `npm run bara -- ...` from repo root, implemented in `scripts/barashop-cli.js`; full docs in `BARASHOP_CLI.md`.
+- The site remains static-first and reads `data/roses.json`; the CLI uses private local SQLite `data/barashop.sqlite` and exports back to JSON.
+- Common commands:
+  - `npm run bara -- init`
+  - `npm run bara -- list`
+  - `npm run bara -- search <keyword>`
+  - `npm run bara -- add --id <id> --name "..." --color "..." --price 5000 --image /images/<id>.png`
+  - `npm run bara -- update <id> --description "..."`
+  - `npm run bara -- status <id> instock|preorder|out_of_order [stock]`
+  - `npm run bara -- stock <id> <N>`
+  - `npm run bara -- delete <id>` — ask Toan first.
+  - `npm run bara -- export`
+- CRM commands also exist for local customers/orders: `customers`, `customer:add`, `customer:update`, `orders`, `order:add`.
+- Do not commit `data/barashop.sqlite`; it may contain customer/order information and is ignored by git.
+- Legacy helpers still exist: `scripts/add-rose.js`, `scripts/update-stock.js`, `scripts/deploy-manual.sh`.
+- After catalog edits, run `npm run bara -- export` then `npm run build`; only deploy/report public changes after verification.
+
 Current handoff (2026-05-18):
 - Toan assigned Bara Agent to own Barashop web work going forward.
-- Latest pushed commits on `main`: `bbd186c` (`Update wedding roses collection UI`) and `c4e04de` (`Document Bara Agent handoff`).
-- Recent UI update changed the collection heading to `Một bông hồng đẹp nhất cho cưới`, description to `Chọn mẫu yêu thích, thêm vào giỏ rồi checkout.`, preorder display to `Preorder`, and cart status to show total cart count.
-- Verification: `npm run build` passed after the change.
-- Deployment: local `npm run deploy` is blocked until `CLOUDFLARE_API_TOKEN` is set for Wrangler. GitHub-connected Cloudflare Pages may still auto-deploy from `main`.
+- Latest pushed commits on `main`: `40d3d6a` (`Update rose product photos and pricing`), `a27c678` (`Update collection intro copy`), and `2eac037` (`Fix Cloudflare Pages wrangler config`). Older handoff commits: `6571758`, `c4e04de`, `bbd186c`.
+- Recent UI update changed the collection heading to `Một bông hồng đẹp nhất cho cưới`, description to `Hãy chọn mẫu yêu thích, thêm vào giỏ hoa của bạn.`, preorder display to `Preorder`, and cart status to show total cart count.
+- Catalog state as of handoff: 16 rose items, all `price: 5000`, `currency: JPY`, AI placeholder photos in `/public/images` and `/dist/images`.
+- Cloudflare Pages config fix: removed unsupported `[build]` block from `wrangler.toml`; Pages accepts `pages_build_output_dir = "dist"`.
+- Verification: `npm run build` passed after the UI/catalog work; `https://barashop.pages.dev` returned HTTP 200 during main-agent check.
+- Deployment: manual deploy uses `scripts/deploy-manual.sh` and requires `CLOUDFLARE_API_TOKEN` from `.dev.vars` or environment. GitHub-connected Cloudflare Pages may auto-deploy from `main`.
