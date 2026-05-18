@@ -31,13 +31,27 @@ npm run bara -- list
 npm run bara -- list --status preorder
 npm run bara -- search sakura
 
-# Add item
+# Add item with a real/manual photo
 npm run bara -- add \
   --id hong-moi-test \
   --name "Hồng mới Test" \
   --color "Đỏ" \
   --price 5000 \
   --image /images/hong-moi-test.png
+
+# Add item with static local generated copy and an AI placeholder SVG
+npm run bara -- add \
+  --id hong-moi-ai \
+  --name "Hồng mới AI" \
+  --color "Đỏ nhung" \
+  --price 5000 \
+  --auto-description \
+  --auto-photo
+
+# Generate fields for an existing item, without changing price/status/stock/deletion
+npm run bara -- generate hong-moi-test --description
+npm run bara -- generate hong-moi-test --photo
+npm run bara -- generate hong-moi-test --description --photo --overwrite
 
 # Update item fields
 npm run bara -- update hong-moi-test --price 5500 --description "Mô tả tiếng Việt."
@@ -57,6 +71,12 @@ npm run bara -- export   # SQLite -> data/roses.json
 ```
 
 Most catalog write commands automatically export `data/roses.json` so the static site stays updated.
+
+## Generated descriptions and placeholder photos
+
+The generator is static-first and local: it uses the rose name/color/style text to create Vietnamese copy and a deterministic SVG in `public/images/`. It does not call external image APIs, does not need secrets, and does not change price, stock, status, or delete anything.
+
+Generated SVGs are AI placeholders, not real product photos. The SVG metadata and visible text include `AI placeholder`; keep them as temporary catalog placeholders until Toan replaces them with verified real photos. If an existing item already has a description or image, `generate` refuses to overwrite it unless `--overwrite` is provided.
 
 ## CRM commands
 
