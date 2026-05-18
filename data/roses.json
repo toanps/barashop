@@ -1,0 +1,21 @@
+[
+  {
+    "id": "hong-do-naomi",
+    "name": "Hoa hồng đỏ Naomi",
+    "color": "Đỏ đậm",
+    "price": null,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Đặt trước: thời gian giao sẽ xác nhận sau",
+    "featured": true,
+    "description": "Hoa hồng đỏ sang trọng, phù hợp làm quà tặng lãng mạn và các dịp đặc biệt tại Nhật.",
+    "images": [
+      "/images/hong-do-naomi.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  }
+]

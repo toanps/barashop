@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Barashop — hoa hồng đặt trước tại Nhật Bản. Sang trọng, tinh tế, giao trong nội địa Nhật." />
+    <title>Barashop — Hoa hồng đặt trước tại Nhật</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Barashop home">
+        <span class="brand-mark">✦</span> Barashop
+      </a>
+      <nav>
+        <a href="#roses">Hoa hồng</a>
+        <a href="#checkout">Đặt hàng</a>
+        <a href="#delivery">Giao hàng</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Hoa hồng preorder tại Nhật</p>
+          <h1>Một bông hồng đẹp, gửi đúng cảm xúc.</h1>
+          <p class="lead">Barashop nhận đặt trước hoa hồng tinh tuyển, phong cách đơn giản và sang trọng. Phù hợp làm quà tặng, kỷ niệm, sinh nhật, hoặc những lời nhắn dịu dàng.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#checkout">Đặt trước ngay</a>
+            <a class="button ghost" href="#roses">Xem mẫu hoa</a>
+          </div>
+          <p class="note">Hiện đa số mẫu là preorder. Barashop sẽ xác nhận thời gian giao sau khi nhận đơn.</p>
+        </div>
+        <div class="hero-card">
+          <img src="/images/hong-do-naomi.png" alt="Hoa hồng đỏ Naomi — ảnh minh họa AI thực tế" />
+          <p>Ảnh minh họa AI — một bông, đúng màu và dáng hoa.</p>
+        </div>
+      </section>
+
+      <section id="roses" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Bộ sưu tập</p>
+          <h2>Hoa hồng đang nhận đặt trước</h2>
+        </div>
+        <div id="roseGrid" class="grid" aria-live="polite"></div>
+      </section>
+
+      <section id="checkout" class="section checkout-section">
+        <div>
+          <p class="eyebrow">Checkout</p>
+          <h2>Gửi yêu cầu đặt hàng</h2>
+          <p class="muted">Chọn PayPay hoặc COD. Barashop sẽ xác nhận lại qua Telegram/email trước khi hoàn tất đơn.</p>
+        </div>
+        <form id="checkoutForm" class="checkout-form">
+          <label>Họ tên
+            <input name="name" required placeholder="Nguyễn Văn A" />
+          </label>
+          <label>Số điện thoại / Telegram
+            <input name="contact" required placeholder="090... hoặc @username" />
+          </label>
+          <label>Email
+            <input type="email" name="email" placeholder="you@example.com" />
+          </label>
+          <label>Mẫu hoa
+            <select name="roseId" id="roseSelect" required></select>
+          </label>
+          <label>Số lượng
+            <input type="number" name="quantity" min="1" value="1" required />
+          </label>
+          <label>Phương thức thanh toán
+            <select name="paymentMethod" required>
+              <option value="PayPay">PayPay</option>
+              <option value="COD">COD — thanh toán khi nhận</option>
+            </select>
+          </label>
+          <label>Địa chỉ giao tại Nhật
+            <textarea name="address" required placeholder="〒... tỉnh/thành phố, địa chỉ chi tiết"></textarea>
+          </label>
+          <label>Lời nhắn / ngày muốn nhận
+            <textarea name="message" placeholder="Ví dụ: muốn nhận tối thứ Bảy, kèm thiệp..."></textarea>
+          </label>
+          <button class="button primary" type="submit">Gửi đơn preorder</button>
+          <p id="formStatus" class="form-status" role="status"></p>
+        </form>
+      </section>
+
+      <section id="delivery" class="section details">
+        <div>
+          <h2>Giao hàng tại Nhật</h2>
+          <p>Barashop hiện chỉ nhận đơn trong nội địa Nhật Bản. Thời gian giao phụ thuộc vào tình trạng preorder và khu vực nhận hàng.</p>
+        </div>
+        <div>
+          <h2>Ảnh sản phẩm</h2>
+          <p>Ảnh trên website có thể là ảnh minh họa AI thực tế cho giai đoạn MVP. Khi có ảnh thật, Barashop sẽ cập nhật từng mẫu hoa.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Barashop. Hoa hồng preorder tại Nhật.</p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
