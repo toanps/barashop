@@ -61,7 +61,7 @@ function renderProducts() {
         <p>${rose.description}</p>
         <div class="rose-footer">
           <span>${priceText(rose)}</span>
-          <small>${rose.leadTime}</small>
+          <small>${rose.availability === 'preorder' ? 'Preorder' : rose.leadTime || ''}</small>
         </div>
         <button class="button primary add-cart" type="button" data-id="${rose.id}">Thêm vào giỏ</button>
       </div>
@@ -70,6 +70,7 @@ function renderProducts() {
 }
 
 function renderCart() {
+  const count = cartCount();
   if (!cart.length) {
     cartItems.textContent = 'Chưa có sản phẩm nào.';
     cartTotal.textContent = '0 JPY';
@@ -95,6 +96,7 @@ function renderCart() {
   }).join('');
 
   cartTotal.textContent = `${cartAmount().toLocaleString('ja-JP')} JPY`;
+  status.textContent = count ? `Đã thêm vào giỏ (${count} sản phẩm).` : '';
 }
 
 function addToCart(id) {
@@ -103,7 +105,8 @@ function addToCart(id) {
   else cart.push({ id, quantity: 1 });
   saveCart();
   renderCart();
-  status.textContent = `Đã thêm vào giỏ (${cartCount()} sản phẩm).`;
+  const count = cartCount();
+  status.textContent = `Đã thêm vào giỏ (${count} sản phẩm).`;
 }
 
 function changeQty(id, delta) {
