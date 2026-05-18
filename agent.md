@@ -45,9 +45,9 @@ Catalog tooling:
 
 Current handoff (2026-05-18):
 - Toan assigned Bara Agent to own Barashop web work going forward.
-- Latest pushed commits on `main`: `40d3d6a` (`Update rose product photos and pricing`), `a27c678` (`Update collection intro copy`), and `2eac037` (`Fix Cloudflare Pages wrangler config`). Older handoff commits: `6571758`, `c4e04de`, `bbd186c`.
+- Latest pushed commit on `main`: `7afa0ca` (`chore: rename local project path to barashop`). Recent prior commits: `4f40e92` (`feat: add local Barashop CRM CLI`), `40d3d6a` (`Update rose product photos and pricing`), `a27c678` (`Update collection intro copy`), `2eac037` (`Fix Cloudflare Pages wrangler config`), `6571758`, `c4e04de`, `bbd186c`.
 - Recent UI update changed the collection heading to `Một bông hồng đẹp nhất cho cưới`, description to `Hãy chọn mẫu yêu thích, thêm vào giỏ hoa của bạn.`, preorder display to `Preorder`, and cart status to show total cart count.
 - Catalog state as of handoff: 16 rose items, all `price: 5000`, `currency: JPY`, AI placeholder photos in `/public/images` and `/dist/images`.
 - Cloudflare Pages config fix: removed unsupported `[build]` block from `wrangler.toml`; Pages accepts `pages_build_output_dir = "dist"`.
-- Verification: `npm run build` passed after the UI/catalog work; `https://barashop.pages.dev` returned HTTP 200 during main-agent check.
+- Verification: `npm run bara -- init`, `npm run bara -- list`, `npm run bara -- search naomi`, and `npm run build` passed after the CLI/catalog work; `https://barashop.pages.dev` returned HTTP 200 during main-agent check.
 - Deployment: manual deploy uses `scripts/deploy-manual.sh` and requires `CLOUDFLARE_API_TOKEN` from `.dev.vars` or environment. GitHub-connected Cloudflare Pages may auto-deploy from `main`.
