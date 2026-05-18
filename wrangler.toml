@@ -1,6 +1,7 @@
 name = "barashop"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-05-18"
+build_command = "npm run build"
 
 # For Cloudflare Pages GitHub integration, deploy is automatic
 # But if you need explicit deploy command:
