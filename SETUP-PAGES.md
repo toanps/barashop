@@ -40,3 +40,28 @@ CLOUDFLARE_ACCOUNT_ID=***
 ```
 
 The current token may still need Cloudflare Pages edit permission if deploy auth fails.
+
+## Current deploy auth error
+
+If deployment fails with:
+
+```text
+Authentication error [code: 10000]
+/accounts/d9e4f4cca9a1657024585f8d5d19af37/pages/projects/barashop
+```
+
+Set these Cloudflare **Build environment variables/secrets**:
+
+```bash
+CLOUDFLARE_ACCOUNT_ID=d9e4f4cca9a1657024585f8d5d19af37
+CLOUDFLARE_API_TOKEN=YOUR_CLOUDFLARE_API_TOKEN
+```
+
+Important: Wrangler needs the variable name exactly `CLOUDFLARE_API_TOKEN`, not `CF_API_TOKEN`.
+
+The API token must have at least:
+
+- Account → Cloudflare Pages → Edit
+- Account → Workers Scripts → Edit (for Pages Functions)
+
+Scope it to account `d9e4f4cca9a1657024585f8d5d19af37`.
