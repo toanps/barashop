@@ -2,6 +2,10 @@ name = "barashop"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-05-18"
 
+# For Cloudflare Pages GitHub integration, deploy is automatic
+# But if you need explicit deploy command:
+# npx wrangler pages publish dist
+
 [vars]
 ORDER_TO_EMAIL = "thucao@iccjpn.com"
 BARA_TELEGRAM_CHAT_ID = "459579073"
