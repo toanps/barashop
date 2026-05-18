@@ -13,8 +13,8 @@
         <span class="brand-mark">✦</span> Barashop
       </a>
       <nav>
-        <a href="#roses">Hoa hồng</a>
-        <a href="#checkout">Đặt hàng</a>
+        <a href="#roses">Bộ sưu tập</a>
+        <a href="#checkout">Giỏ hàng</a>
         <a href="#delivery">Giao hàng</a>
       </nav>
     </header>
@@ -26,8 +26,8 @@
           <h1>Một bông hồng đẹp, gửi đúng cảm xúc.</h1>
           <p class="lead">Barashop nhận đặt trước hoa hồng tinh tuyển, phong cách đơn giản và sang trọng. Phù hợp làm quà tặng, kỷ niệm, sinh nhật, hoặc những lời nhắn dịu dàng.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#checkout">Đặt trước ngay</a>
-            <a class="button ghost" href="#roses">Xem mẫu hoa</a>
+            <a class="button primary" href="#roses">Xem bộ sưu tập</a>
+            <a class="button ghost" href="#checkout">Tới checkout</a>
           </div>
           <p class="note">Hiện đa số mẫu là preorder. Barashop sẽ xác nhận thời gian giao sau khi nhận đơn.</p>
         </div>
@@ -40,32 +40,33 @@
       <section id="roses" class="section">
         <div class="section-heading">
           <p class="eyebrow">Bộ sưu tập</p>
-          <h2>Hoa hồng đang nhận đặt trước</h2>
+          <h2>16 mẫu hoa đang nhận đặt trước</h2>
+          <p class="muted">Chọn mẫu yêu thích, thêm vào giỏ rồi checkout.</p>
         </div>
-        <div id="roseGrid" class="grid" aria-live="polite"></div>
+        <div id="roseGrid" class="grid collection-grid" aria-live="polite"></div>
       </section>
 
       <section id="checkout" class="section checkout-section">
         <div>
           <p class="eyebrow">Checkout</p>
-          <h2>Gửi yêu cầu đặt hàng</h2>
-          <p class="muted">Chọn PayPay hoặc COD. Barashop sẽ xác nhận lại qua Telegram/email trước khi hoàn tất đơn.</p>
+          <h2>Giỏ hàng & thông tin đặt hàng</h2>
+          <p class="muted">Chọn PayPay hoặc COD. Barashop sẽ xác nhận lại qua điện thoại/email trước khi hoàn tất đơn.</p>
+          <div class="cart-panel">
+            <h3>Giỏ hàng</h3>
+            <div id="cartItems" class="cart-items">Chưa có sản phẩm nào.</div>
+            <div class="cart-total"><span>Tạm tính</span><strong id="cartTotal">0 JPY</strong></div>
+            <button id="clearCart" class="button ghost" type="button">Xóa giỏ</button>
+          </div>
         </div>
         <form id="checkoutForm" class="checkout-form">
           <label>Họ tên
-            <input name="name" required placeholder="Nguyễn Văn A" />
+            <input name="name" required placeholder="Nguyễn Thảo Linh" />
           </label>
-          <label>Số điện thoại / Telegram
-            <input name="contact" required placeholder="090... hoặc @username" />
+          <label>Số điện thoại
+            <input name="contact" required placeholder="090-1234-5678" />
           </label>
           <label>Email
-            <input type="email" name="email" placeholder="you@example.com" />
-          </label>
-          <label>Mẫu hoa
-            <select name="roseId" id="roseSelect" required></select>
-          </label>
-          <label>Số lượng
-            <input type="number" name="quantity" min="1" value="1" required />
+            <input type="email" name="email" placeholder="linh@example.com" />
           </label>
           <label>Phương thức thanh toán
             <select name="paymentMethod" required>
@@ -74,12 +75,12 @@
             </select>
           </label>
           <label>Địa chỉ giao tại Nhật
-            <textarea name="address" required placeholder="〒... tỉnh/thành phố, địa chỉ chi tiết"></textarea>
+            <textarea name="address" required placeholder="〒150-0001 Tokyo, Shibuya-ku..."></textarea>
           </label>
           <label>Lời nhắn / ngày muốn nhận
             <textarea name="message" placeholder="Ví dụ: muốn nhận tối thứ Bảy, kèm thiệp..."></textarea>
           </label>
-          <button class="button primary" type="submit">Gửi đơn preorder</button>
+          <button class="button primary" type="submit">Gửi đơn hàng</button>
           <p id="formStatus" class="form-status" role="status"></p>
         </form>
       </section>

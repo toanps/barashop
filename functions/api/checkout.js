@@ -1,4 +1,4 @@
-const required = ['name', 'contact', 'roseId', 'quantity', 'paymentMethod', 'address'];
+const required = ['name', 'contact', 'items', 'paymentMethod', 'address'];
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -13,15 +13,47 @@ function escapeHtml(value = '') {
   })[char]);
 }
 
-async function sendTelegram(env, order) {
+function normalizeItems(order) {
+  if (Array.isArray(order.items) && order.items.length) {
+    return order.items.map((item) => ({
+      id: item.id,
+      name: item.name || item.id,
+      quantity: Number(item.quantity || 1),
+      price: item.price,
+      currency: item.currency || 'JPY'
+    }));
+  }
+  if (order.roseId) {
+    return [{ id: order.roseId, name: order.roseId, quantity: Number(order.quantity || 1), price: null, currency: 'JPY' }];
+  }
+  return [];
+}
+
+function itemLines(items) {
+  return items.map((item) => {
+    const price = item.price ? `${Number(item.price).toLocaleString('ja-JP')} ${item.currency}` : 'Giá xác nhận sau';
+    return `- ${item.name} x ${item.quantity} (${price})`;
+  }).join('\n');
+}
+
+function itemHtml(items) {
+  return items.map((item) => {
+    const price = item.price ? `${Number(item.price).toLocaleString('ja-JP')} ${escapeHtml(item.currency)}` : 'Giá xác nhận sau';
+    return `<li>${escapeHtml(item.name)} x ${escapeHtml(item.quantity)} — ${escapeHtml(price)}</li>`;
+  }).join('');
+}
+
+async function sendTelegram(env, order, items) {
   if (!env.BARA_TELEGRAM_BOT_TOKEN || !env.BARA_TELEGRAM_CHAT_ID) return { skipped: true };
+  const total = order.total ? `${Number(order.total).toLocaleString('ja-JP')} JPY` : 'Xác nhận sau';
   const text = [
-    '🌹 Barashop preorder mới',
+    '🌹 Barashop đơn hàng mới',
     `Tên: ${order.name}`,
-    `Liên hệ: ${order.contact}`,
+    `SĐT: ${order.contact}`,
     `Email: ${order.email || '-'}`,
-    `Mẫu hoa: ${order.roseId}`,
-    `Số lượng: ${order.quantity}`,
+    'Sản phẩm:',
+    itemLines(items),
+    `Tạm tính: ${total}`,
     `Thanh toán: ${order.paymentMethod}`,
     `Địa chỉ: ${order.address}`,
     `Ghi chú: ${order.message || '-'}`
@@ -35,19 +67,18 @@ async function sendTelegram(env, order) {
   return { ok: response.ok, status: response.status };
 }
 
-async function sendEmail(env, order) {
-  // Preferred for Cloudflare Pages: configure RESEND_API_KEY + ORDER_TO_EMAIL.
-  // If not configured, checkout still sends Telegram and returns success.
+async function sendEmail(env, order, items) {
   if (!env.RESEND_API_KEY) return { skipped: true };
   const to = env.ORDER_TO_EMAIL || 'thucao@iccjpn.com';
+  const total = order.total ? `${Number(order.total).toLocaleString('ja-JP')} JPY` : 'Xác nhận sau';
   const html = `
-    <h1>Barashop preorder mới</h1>
+    <h1>Barashop đơn hàng mới</h1>
     <ul>
       <li><b>Tên:</b> ${escapeHtml(order.name)}</li>
-      <li><b>Liên hệ:</b> ${escapeHtml(order.contact)}</li>
+      <li><b>SĐT:</b> ${escapeHtml(order.contact)}</li>
       <li><b>Email:</b> ${escapeHtml(order.email || '-')}</li>
-      <li><b>Mẫu hoa:</b> ${escapeHtml(order.roseId)}</li>
-      <li><b>Số lượng:</b> ${escapeHtml(order.quantity)}</li>
+      <li><b>Sản phẩm:</b><ul>${itemHtml(items)}</ul></li>
+      <li><b>Tạm tính:</b> ${escapeHtml(total)}</li>
       <li><b>Thanh toán:</b> ${escapeHtml(order.paymentMethod)}</li>
       <li><b>Địa chỉ:</b> ${escapeHtml(order.address)}</li>
       <li><b>Ghi chú:</b> ${escapeHtml(order.message || '-')}</li>
@@ -62,7 +93,7 @@ async function sendEmail(env, order) {
     body: JSON.stringify({
       from: env.ORDER_FROM_EMAIL || 'Barashop <orders@barashop.pages.dev>',
       to,
-      subject: `Barashop preorder — ${order.name}`,
+      subject: `Barashop order — ${order.name}`,
       html
     })
   });
@@ -77,12 +108,15 @@ export async function onRequestPost({ request, env }) {
     return json({ error: 'Invalid JSON' }, 400);
   }
 
-  const missing = required.filter((key) => !order[key]);
+  const items = normalizeItems(order);
+  order.items = items;
+
+  const missing = required.filter((key) => key === 'items' ? !items.length : !order[key]);
   if (missing.length) return json({ error: `Missing fields: ${missing.join(', ')}` }, 400);
   if (!['PayPay', 'COD'].includes(order.paymentMethod)) return json({ error: 'Invalid payment method' }, 400);
 
-  const telegram = await sendTelegram(env, order);
-  const email = await sendEmail(env, order);
+  const telegram = await sendTelegram(env, order, items);
+  const email = await sendEmail(env, order, items);
 
   if (telegram.ok === false && email.ok === false) {
     return json({ error: 'Could not send checkout notifications' }, 502);
