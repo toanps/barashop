@@ -1,27 +1,42 @@
-# Barashop Cloudflare Pages Setup
+# Barashop Cloudflare Deploy Settings
 
-## Dashboard Setup (Easiest)
+Use Cloudflare's connected-repo build flow.
 
-1. Go to https://dash.cloudflare.com → Pages → **Create a project**
-2. **Connect to Git** → Select `toanps/barashop`
-3. **Build settings**:
-   - **Build command**: `npm run build`
-   - **Build output directory**: `dist`
-   - **Root directory**: (leave empty or `/`)
-4. **Environment Variables** (add after creation):
-   ```
-   CF_API_TOKEN = cfut_5HYdeK4O... (the token)
-   ORDER_TO_EMAIL = thucao@iccjpn.com
-   BARA_TELEGRAM_CHAT_ID = 459579073
-   BARA_TELEGRAM_BOT_TOKEN = *** bot token ***
-   ```
-5. Click **Save and Deploy**
+## Required Cloudflare settings
 
-## GitHub Actions Alternative (if you have proper PAT)
+- Git repo: `toanps/barashop`
+- Production branch: `main`
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Deploy command: `npm run deploy`
 
-If you want GitHub Actions to auto-deploy:
-1. Create GitHub Personal Access Token with `workflow` scope
-2. Run: `git push` after adding the `/.github` folder
-3. Add secrets in GitHub repo → Settings → Secrets:
-   - `CF_API_TOKEN` = cfut_5HYdeK4O...
-   - `CF_ACCOUNT_NAME` = your cloudflare account name
+`npm run deploy` runs:
+
+```bash
+wrangler pages deploy dist --project-name=barashop
+```
+
+Do **not** use `npx wrangler deploy`; that is for Workers and causes:
+
+```text
+Missing entry-point to Worker script or to assets directory
+```
+
+## Required environment variables / secrets
+
+Set these in Cloudflare build environment:
+
+```bash
+BARA_TELEGRAM_BOT_TOKEN=***
+BARA_TELEGRAM_CHAT_ID=459579073
+ORDER_TO_EMAIL=thucao@iccjpn.com
+```
+
+If Cloudflare asks for deployment auth, also set:
+
+```bash
+CLOUDFLARE_API_TOKEN=***
+CLOUDFLARE_ACCOUNT_ID=***
+```
+
+The current token may still need Cloudflare Pages edit permission if deploy auth fails.
