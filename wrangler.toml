@@ -5,7 +5,3 @@ compatibility_date = "2026-05-18"
 [vars]
 ORDER_TO_EMAIL = "thucao@iccjpn.com"
 BARA_TELEGRAM_CHAT_ID = "459579073"
-
-# For the API function
-[assets]
-directory = "./dist"
