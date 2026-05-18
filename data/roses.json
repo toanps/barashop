@@ -1,18 +1,306 @@
 [
-  {"id":"hong-do-naomi","name":"Hồng đỏ Naomi","color":"Đỏ nhung","price":1200,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 2–4 ngày","featured":true,"description":"Một bông hồng đỏ sang trọng cho lời nhắn lãng mạn.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-do-classic","name":"Hồng đỏ Classic","color":"Đỏ tươi","price":980,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 2–4 ngày","featured":false,"description":"Dáng hoa cân đối, phù hợp sinh nhật và kỷ niệm.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-do-premium","name":"Hồng đỏ Premium","color":"Đỏ đậm","price":1500,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 3–5 ngày","featured":false,"description":"Bông lớn, phong cách tối giản nhưng nổi bật.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-do-romance","name":"Hồng đỏ Romance","color":"Đỏ rượu","price":1350,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 2–5 ngày","featured":false,"description":"Tông đỏ sâu, hợp cho lời tỏ tình hoặc ngày đặc biệt.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-phan-sakura","name":"Hồng phấn Sakura","color":"Hồng phấn","price":1100,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 3–5 ngày","featured":false,"description":"Sắc hồng nhẹ nhàng, nữ tính và tinh tế.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-phan-moon","name":"Hồng phấn Moon","color":"Hồng nhạt","price":1150,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 3–5 ngày","featured":false,"description":"Màu dịu, hợp làm quà cảm ơn hoặc chúc mừng.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-trang-pure","name":"Hồng trắng Pure","color":"Trắng kem","price":1250,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 3–6 ngày","featured":false,"description":"Tối giản, thanh lịch, hợp phong cách sang trọng.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-trang-snow","name":"Hồng trắng Snow","color":"Trắng sáng","price":1300,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 3–6 ngày","featured":false,"description":"Một bông hoa trắng tinh khôi cho dịp trang nhã.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-vang-sun","name":"Hồng vàng Sun","color":"Vàng ấm","price":1180,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 3–5 ngày","featured":false,"description":"Tươi sáng, hợp lời chúc may mắn và khởi đầu mới.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-vang-honey","name":"Hồng vàng Honey","color":"Vàng mật","price":1220,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 3–5 ngày","featured":false,"description":"Tông vàng ấm, tạo cảm giác vui vẻ và thân thiện.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-cam-apricot","name":"Hồng cam Apricot","color":"Cam đào","price":1280,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 3–5 ngày","featured":false,"description":"Màu cam đào hiện đại, hợp quà chúc mừng.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-cam-sunset","name":"Hồng cam Sunset","color":"Cam ấm","price":1320,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 3–5 ngày","featured":false,"description":"Ấm áp, nổi bật nhưng vẫn mềm mại.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-tim-lavender","name":"Hồng tím Lavender","color":"Tím lavender","price":1450,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 4–7 ngày","featured":false,"description":"Tông tím nhẹ, khác biệt và rất tinh tế.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-tim-royal","name":"Hồng tím Royal","color":"Tím trầm","price":1580,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 4–7 ngày","featured":false,"description":"Màu tím trầm cho phong cách đặc biệt hơn.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-xanh-mint","name":"Hồng xanh Mint","color":"Xanh mint","price":1600,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 5–8 ngày","featured":false,"description":"Màu hiếm, chỉ nhận theo preorder và xác nhận lại.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]},
-  {"id":"hong-mix-surprise","name":"Hồng mix Surprise","color":"Mix theo mùa","price":1680,"currency":"JPY","availability":"preorder","stock":0,"leadTime":"Preorder 4–7 ngày","featured":false,"description":"Barashop chọn màu đẹp theo nguồn hoa trong tuần.","images":["/images/hong-do-naomi.png"],"paymentMethods":["PayPay","COD"]}
+  {
+    "id": "hong-do-naomi",
+    "name": "Hồng đỏ Naomi",
+    "color": "Đỏ nhung",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 2–4 ngày",
+    "featured": true,
+    "description": "Một bông hồng đỏ sang trọng cho lời nhắn lãng mạn.",
+    "images": [
+      "/images/hong-do-naomi.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-do-classic",
+    "name": "Hồng đỏ Classic",
+    "color": "Đỏ tươi",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 2–4 ngày",
+    "featured": false,
+    "description": "Dáng hoa cân đối, phù hợp sinh nhật và kỷ niệm.",
+    "images": [
+      "/images/hong-do-classic.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-do-premium",
+    "name": "Hồng đỏ Premium",
+    "color": "Đỏ đậm",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 3–5 ngày",
+    "featured": false,
+    "description": "Bông lớn, phong cách tối giản nhưng nổi bật.",
+    "images": [
+      "/images/hong-do-premium.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-do-romance",
+    "name": "Hồng đỏ Romance",
+    "color": "Đỏ rượu",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 2–5 ngày",
+    "featured": false,
+    "description": "Tông đỏ sâu, hợp cho lời tỏ tình hoặc ngày đặc biệt.",
+    "images": [
+      "/images/hong-do-romance.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-phan-sakura",
+    "name": "Hồng phấn Sakura",
+    "color": "Hồng phấn",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 3–5 ngày",
+    "featured": false,
+    "description": "Sắc hồng nhẹ nhàng, nữ tính và tinh tế.",
+    "images": [
+      "/images/hong-phan-sakura.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-phan-moon",
+    "name": "Hồng phấn Moon",
+    "color": "Hồng nhạt",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 3–5 ngày",
+    "featured": false,
+    "description": "Màu dịu, hợp làm quà cảm ơn hoặc chúc mừng.",
+    "images": [
+      "/images/hong-phan-moon.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-trang-pure",
+    "name": "Hồng trắng Pure",
+    "color": "Trắng kem",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 3–6 ngày",
+    "featured": false,
+    "description": "Tối giản, thanh lịch, hợp phong cách sang trọng.",
+    "images": [
+      "/images/hong-trang-pure.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-trang-snow",
+    "name": "Hồng trắng Snow",
+    "color": "Trắng sáng",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 3–6 ngày",
+    "featured": false,
+    "description": "Một bông hoa trắng tinh khôi cho dịp trang nhã.",
+    "images": [
+      "/images/hong-trang-snow.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-vang-sun",
+    "name": "Hồng vàng Sun",
+    "color": "Vàng ấm",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 3–5 ngày",
+    "featured": false,
+    "description": "Tươi sáng, hợp lời chúc may mắn và khởi đầu mới.",
+    "images": [
+      "/images/hong-vang-sun.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-vang-honey",
+    "name": "Hồng vàng Honey",
+    "color": "Vàng mật",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 3–5 ngày",
+    "featured": false,
+    "description": "Tông vàng ấm, tạo cảm giác vui vẻ và thân thiện.",
+    "images": [
+      "/images/hong-vang-honey.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-cam-apricot",
+    "name": "Hồng cam Apricot",
+    "color": "Cam đào",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 3–5 ngày",
+    "featured": false,
+    "description": "Màu cam đào hiện đại, hợp quà chúc mừng.",
+    "images": [
+      "/images/hong-cam-apricot.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-cam-sunset",
+    "name": "Hồng cam Sunset",
+    "color": "Cam ấm",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 3–5 ngày",
+    "featured": false,
+    "description": "Ấm áp, nổi bật nhưng vẫn mềm mại.",
+    "images": [
+      "/images/hong-cam-sunset.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-tim-lavender",
+    "name": "Hồng tím Lavender",
+    "color": "Tím lavender",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 4–7 ngày",
+    "featured": false,
+    "description": "Tông tím nhẹ, khác biệt và rất tinh tế.",
+    "images": [
+      "/images/hong-tim-lavender.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-tim-royal",
+    "name": "Hồng tím Royal",
+    "color": "Tím trầm",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 4–7 ngày",
+    "featured": false,
+    "description": "Màu tím trầm cho phong cách đặc biệt hơn.",
+    "images": [
+      "/images/hong-tim-royal.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-xanh-mint",
+    "name": "Hồng xanh Mint",
+    "color": "Xanh mint",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 5–8 ngày",
+    "featured": false,
+    "description": "Màu hiếm, chỉ nhận theo preorder và xác nhận lại.",
+    "images": [
+      "/images/hong-xanh-mint.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  },
+  {
+    "id": "hong-mix-surprise",
+    "name": "Hồng mix Surprise",
+    "color": "Mix theo mùa",
+    "price": 5000,
+    "currency": "JPY",
+    "availability": "preorder",
+    "stock": 0,
+    "leadTime": "Preorder 4–7 ngày",
+    "featured": false,
+    "description": "Barashop chọn màu đẹp theo nguồn hoa trong tuần.",
+    "images": [
+      "/images/hong-mix-surprise.png"
+    ],
+    "paymentMethods": [
+      "PayPay",
+      "COD"
+    ]
+  }
 ]
