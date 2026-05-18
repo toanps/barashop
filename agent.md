@@ -45,7 +45,7 @@ Catalog tooling:
 
 Current handoff (2026-05-18):
 - Toan assigned Bara Agent to own Barashop web work going forward.
-- Latest pushed commit on `main`: `7afa0ca` (`chore: rename local project path to barashop`). Recent prior commits: `4f40e92` (`feat: add local Barashop CRM CLI`), `40d3d6a` (`Update rose product photos and pricing`), `a27c678` (`Update collection intro copy`), `2eac037` (`Fix Cloudflare Pages wrangler config`), `6571758`, `c4e04de`, `bbd186c`.
+- Recent commits to know: `0afe9da` (`fix: remove hero AI image`), `8b20c46` (`docs: update Bara handoff after CLI`), `7afa0ca` (`chore: rename local project path to barashop`), `4f40e92` (`feat: add local Barashop CRM CLI`), `40d3d6a` (`Update rose product photos and pricing`), `a27c678`, `2eac037`, `6571758`, `c4e04de`, `bbd186c`.
 - Recent UI update changed the collection heading to `Một bông hồng đẹp nhất cho cưới`, description to `Hãy chọn mẫu yêu thích, thêm vào giỏ hoa của bạn.`, preorder display to `Preorder`, and cart status to show total cart count.
 - Catalog state as of handoff: 16 rose items, all `price: 5000`, `currency: JPY`, AI placeholder photos in `/public/images` and `/dist/images`.
 - Cloudflare Pages config fix: removed unsupported `[build]` block from `wrangler.toml`; Pages accepts `pages_build_output_dir = "dist"`.
