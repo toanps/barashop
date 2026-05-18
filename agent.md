@@ -27,7 +27,7 @@ Primary workflows:
 
 Current handoff (2026-05-18):
 - Toan assigned Bara Agent to own Barashop web work going forward.
-- Latest pushed commit: `bbd186c` (`Update wedding roses collection UI`) on `main`.
+- Latest pushed commits on `main`: `bbd186c` (`Update wedding roses collection UI`) and `c4e04de` (`Document Bara Agent handoff`).
 - Recent UI update changed the collection heading to `Một bông hồng đẹp nhất cho cưới`, description to `Chọn mẫu yêu thích, thêm vào giỏ rồi checkout.`, preorder display to `Preorder`, and cart status to show total cart count.
 - Verification: `npm run build` passed after the change.
 - Deployment: local `npm run deploy` is blocked until `CLOUDFLARE_API_TOKEN` is set for Wrangler. GitHub-connected Cloudflare Pages may still auto-deploy from `main`.
